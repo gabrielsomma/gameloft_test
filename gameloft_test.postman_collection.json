@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "959ef875-3276-441b-9b38-d93724cf6d24",
+		"name": "gameloft_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4370297"
+	},
+	"item": [
+		{
+			"name": "get profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/profiles",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add profiles",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"player_id\": \"97983be2-98b7-11e7-90cf-082e5f28d836\",\n    \"active_campaign\": [],\n    \"level\": 3,\n    \"country\": \"CA\",\n    \"inventory\": {\n        \"cash\": 123,\n        \"coins\": 123,\n        \"item_1\": 1,\n        \"item_34\": 3,\n        \"item_55\": 2\n    }\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/profiles",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get profile id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/profile/97983be2-98b7-11e7-90cf-082e5f28d836",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"profile",
+						"97983be2-98b7-11e7-90cf-082e5f28d836"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add campaign",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mycampaign\",\n    \"matchers\" : {\n        \"level\": {\n            \"min\": 1,\n            \"max\": 3\n        },\n        \"has\": {\n            \"country\": [\"US\", \"RO\", \"CA\"],\n            \"items\": [\"item_1\"]\n        },\n        \"does_not_have\": {\n            \"items\": [\"item_4\"]\n            }\n    }\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:5000/campaigns",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"campaigns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get campaigns",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:5000/campaigns",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"campaigns"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
